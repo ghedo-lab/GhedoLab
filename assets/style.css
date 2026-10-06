@@ -103,7 +103,8 @@ nav { display: flex; gap: 26px; font-size: 14.5px; }
 nav a { text-decoration: none; color: var(--text); opacity: 0.72; }
 nav a:hover, nav a[aria-current="page"] { opacity: 1; }
 nav a[aria-current="page"] { border-bottom: 2px solid var(--accent); padding-bottom: 3px; }
-@media (max-width: 640px) { nav { gap: 14px; font-size: 13px; } .header-row { padding: 12px 20px; } }
+@media (max-width: 640px) { nav { gap: 14px; font-size: 13px; } .header-row { padding: 12px 16px; gap: 12px; } .header-right { gap: 12px; } }
+@media (max-width: 420px) { .wordmark { font-size: 0; gap: 0; } nav { gap: 12px; } }
 
 .theme-toggle {
   width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border);
