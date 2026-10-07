@@ -185,7 +185,7 @@ nav a[aria-current="page"] { border-bottom: 2px solid var(--accent); padding-bot
 .pt-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; }
 .pt-row + .pt-row { border-top: 1px solid var(--border); }
 .pt-row > div { padding: 16px 20px; font-size: 14.5px; display: flex; align-items: center; }
-.pt-row.head > div { padding: 22px 20px; }
+.pt-row.head > div { padding: 22px 20px; flex-direction: column; align-items: flex-start; justify-content: center; }
 .pt-row.head .plan-name { font-family: var(--serif-num); font-size: 19px; font-weight: 600; display: block; }
 .pt-row.head .plan-price { display: block; font-size: 13.5px; color: var(--text-muted); margin-top: 4px; font-weight: 400; }
 .pt-row .feature-name { color: var(--text); font-weight: 500; }
@@ -276,3 +276,11 @@ a.product-card:hover { border-color: var(--accent); }
 .is-upcoming .status-pill { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
 .product-link { font-weight: 600; font-size: 14.5px; color: var(--accent); text-decoration: none; }
 .product-card .product-link:hover { text-decoration: underline; }
+
+/* Riquadro "in lavorazione" sotto le tabelle delle versioni. */
+.wip-note {
+  margin-top: 18px; padding: 16px 18px; border-radius: 12px;
+  border: 1.5px dashed var(--border); background: var(--surface-card);
+  color: var(--text-muted); font-size: 14.5px; line-height: 1.55;
+}
+.wip-note strong { color: var(--text); }
