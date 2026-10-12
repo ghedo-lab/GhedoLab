@@ -49,7 +49,7 @@
 
   <section style="padding-top:32px;">
     <div class="legal-prose">
-      <p class="legal-updated"><em>Ultimo aggiornamento: 7 ottobre 2026 · <a href="#modifiche">storico delle modifiche</a></em></p>
+      <p class="legal-updated"><em>Ultimo aggiornamento: 12 ottobre 2026 · <a href="#modifiche">storico delle modifiche</a></em></p>
 
       <div class="legal-note"><strong>In breve.</strong> WorkTracker non ha pubblicità e non vende dati. Timbrature, ferie, trasferte, spese e foto degli scontrini restano sul tuo telefono: GhedoLab non li riceve e non può vederli. Lasciano il dispositivo solo pochi dati tecnici o di account, e sempre per un motivo preciso, elencato qui sotto.</div>
 
@@ -63,11 +63,13 @@
       <p><strong>Uso in un'organizzazione.</strong> Un'azienda può installare un proprio server WorkTracker (<em>self-hosted</em>) a cui associare i telefoni dei dipendenti. In questo caso i dati di lavoro vengono sincronizzati con il server dell'azienda, e il titolare di quei dati è l'azienda, non GhedoLab. Per qualsiasi domanda su quei dati rivolgiti al tuo datore di lavoro o all'amministratore del server.</p>
 
       <h2>3. Dati che restano solo sul tuo dispositivo</h2>
-      <p>Timbrature, ore di lavoro e di viaggio, ferie e permessi, trasferte con tappe e prenotazioni, spese, foto degli scontrini e delle prenotazioni, file <code>.ics</code> importati, immagine del profilo, zone di lavoro e tag NFC configurati.</p>
+      <p>Timbrature, ore di lavoro e di viaggio, ferie e permessi, orario contrattuale e banca ore, commesse e clienti con le ore assegnate, trasferte con tappe e prenotazioni, spese, foto degli scontrini e delle prenotazioni, file <code>.ics</code> importati, promemoria, immagine del profilo, zone di lavoro e tag NFC configurati.</p>
       <ul>
         <li>La <strong>lettura del testo</strong> su scontrini e prenotazioni (OCR) avviene sul telefono con un modello locale (Google ML Kit): nessuna immagine viene inviata fuori.</li>
         <li>La ricerca dell'<strong>aeroporto più vicino</strong> usa un elenco di aeroporti incluso nell'app, senza collegarsi a internet.</li>
-        <li>I <strong>report PDF ed Excel</strong> vengono creati sul telefono; sei tu a decidere se e con chi condividerli.</li>
+        <li>I <strong>report PDF ed Excel</strong> e il <strong>CSV delle commesse</strong> vengono creati sul telefono; sei tu a decidere se e con chi condividerli.</li>
+        <li>Una <strong>copia di sicurezza</strong> dei dati (file JSON) viene aggiornata a ogni timbratura nella memoria privata dell'app, per poterli ricostruire se il database si danneggia. Resta sul telefono.</li>
+        <li>Il <strong>blocco dell'app</strong> usa l'impronta, il volto o il PIN del telefono tramite Android: WorkTracker riceve solo l'esito "sbloccato sì/no" e non legge né salva dati biometrici.</li>
       </ul>
 
       <h2>4. Dati che lasciano il dispositivo</h2>
@@ -76,10 +78,12 @@
       <table>
         <tr><th>Servizio</th><th>Dati inviati</th><th>Quando</th><th>Perché e base giuridica</th></tr>
         <tr><td>Account WorkTracker (servizio licenze di GhedoLab, ospitato da Fly.io a Francoforte, UE)</td><td>Email, nome e cognome se li inserisci, stato della prova o dello sblocco, identificativo anonimo generato dall'app</td><td>Quando accedi con l'email, quando richiedi la prova o lo sblocco, e con un controllo periodico (circa ogni 6 giorni) mentre le Trasferte sono attive</td><td>Gestire prova e sblocco delle Trasferte — contratto</td></tr>
-        <tr><td>Fornitore di posta elettronica di GhedoLab</td><td>Il tuo indirizzo email e il codice di accesso monouso</td><td>Quando chiedi il codice per accedere (valido 10 minuti)</td><td>Verificare che l'email sia tua — contratto</td></tr>
+        <tr><td>Resend (invio email, server nell'UE in Irlanda)</td><td>Il tuo indirizzo email e il codice di accesso monouso</td><td>Quando chiedi il codice per accedere (valido 10 minuti)</td><td>Verificare che l'email sia tua — contratto</td></tr>
         <tr><td>Segnalazioni e richieste (Google Apps Script, Google)</td><td>Testo e categoria della richiesta, modello del telefono, versione di Android e dell'app, identificativo anonimo; per le richieste di sblocco anche la tua email; screenshot solo se scegli di allegarli</td><td>Solo quando invii tu "Segnala un problema" o una richiesta di prova o sblocco</td><td>Assistenza e gestione delle richieste — contratto</td></tr>
         <tr><td>Sentry (diagnostica errori)</td><td>Dati tecnici dell'errore (stack trace), modello del telefono, versione di Android e dell'app. Nessun nome, email o dato di lavoro</td><td>Automaticamente, quando l'app va in errore o si chiude inaspettatamente</td><td>Trovare e correggere i difetti — legittimo interesse</td></tr>
         <tr><td>Backup su Google Drive (facoltativo)</td><td>Copia dei dati dell'app, salvata nella cartella "WorkTracker Backups" del <strong>tuo</strong> Google Drive</td><td>Solo se colleghi il tuo account Google e avvii o programmi un backup</td><td>Permetterti di ripristinare i dati — contratto. GhedoLab non ha accesso ai tuoi backup; l'app può vedere solo i file che ha creato lei</td></tr>
+        <tr><td>Calendario del telefono (facoltativo)</td><td>Trasferte (destinazione, itinerario, zona, commessa) e ferie, permessi e malattia (tipo, durata, nota) come eventi di calendario</td><td>Solo se lo attivi nelle Impostazioni; gli eventi vengono aggiornati quando l'app passa in background e circa ogni 6 ore</td><td>Vedere trasferte e assenze nel tuo calendario — contratto. Con il calendario locale "WorkTracker" gli eventi restano sul telefono; se scegli un calendario collegato a un account (ad esempio Google), Android li sincronizza con quell'account. GhedoLab non vi accede</td></tr>
+        <tr><td>Backup del telefono di Android (Google)</td><td>I dati dell'app possono essere inclusi nel backup automatico del dispositivo, cifrato e salvato sul tuo account Google</td><td>Solo se sul telefono è attivo il backup di Google (Impostazioni di Android → Backup)</td><td>Ripristinare l'app su un nuovo telefono — funzione di Android gestita da Google; GhedoLab non vi accede</td></tr>
         <tr><td>Photon (Komoot) — ricerca indirizzi</td><td>Il testo dell'indirizzo cercato, oppure le coordinate del punto che tocchi sulla mappa</td><td>Quando cerchi un indirizzo o scegli un punto sulla mappa</td><td>Trovare luoghi e indirizzi — contratto</td></tr>
         <tr><td>OpenStreetMap — mappe e stazioni (tile.openstreetmap.org, Overpass API)</td><td>Indirizzo IP e area della mappa visualizzata; coordinate di una destinazione per cercare la stazione ferroviaria più vicina</td><td>Quando apri una mappa o cerchi la stazione più vicina</td><td>Mostrare le mappe e i luoghi vicini — contratto</td></tr>
       </table>
@@ -98,15 +102,18 @@
       <h3>Permessi del dispositivo</h3>
       <ul>
         <li><strong>Fotocamera e foto:</strong> scontrini, prenotazioni, immagine del profilo, screenshot facoltativi per le segnalazioni.</li>
-        <li><strong>Posizione:</strong> solo per i due casi descritti sopra.</li>
+        <li><strong>Posizione (precisa o approssimativa, a tua scelta da Android 12):</strong> solo per i due casi descritti sopra.</li>
+        <li><strong>Calendario:</strong> elencare i calendari del telefono e scrivere gli eventi di trasferte e assenze, solo se attivi la funzione. WorkTracker modifica solo gli eventi che ha creato e non legge i tuoi altri appuntamenti.</li>
         <li><strong>NFC:</strong> timbrare avvicinando il telefono a un tag NFC che hai configurato.</li>
         <li><strong>Rete locale e dispositivi nelle vicinanze:</strong> trovare il server della tua organizzazione.</li>
-        <li><strong>Notifiche e sveglie esatte:</strong> promemoria (ad esempio l'uscita dimenticata), anche dopo il riavvio del telefono.</li>
+        <li><strong>Notifiche e sveglie esatte:</strong> promemoria e avviso "Hai dimenticato di uscire?", anche dopo il riavvio del telefono.</li>
+        <li><strong>Impronta, volto o PIN:</strong> solo se attivi il blocco dell'app.</li>
       </ul>
 
       <h2>6. Per quanto tempo conserviamo i dati</h2>
       <ul>
         <li><strong>Dati sul telefono:</strong> finché non li cancelli o disinstalli l'app.</li>
+        <li><strong>Eventi nel calendario:</strong> finché la funzione è attiva; disattivandola puoi scegliere di toglierli tutti.</li>
         <li><strong>Account WorkTracker:</strong> finché l'account esiste; cancellato entro 30 giorni dalla tua richiesta (vedi sezione 7).</li>
         <li><strong>Segnalazioni e richieste:</strong> per il tempo necessario a gestirle, e comunque non oltre 12 mesi.</li>
         <li><strong>Diagnostica Sentry:</strong> per il periodo di conservazione previsto dal servizio, al massimo 90 giorni.</li>
@@ -119,10 +126,10 @@
         <li>Scrivi a <a href="mailto:info@ghedolab.com?subject=Richiesta%20cancellazione%20account%20WorkTracker">info@ghedolab.com</a> con oggetto <em>"Richiesta cancellazione account WorkTracker"</em>, indicando l'email con cui accedi all'app.</li>
         <li>La richiesta viene gestita entro <strong>30 giorni</strong>.</li>
       </ol>
-      <p><strong>Cosa viene cancellato:</strong> email, nome e cognome, stato della prova o dello sblocco e storico della licenza dal servizio licenze. <strong>Cosa no:</strong> i dati sul tuo telefono e nel tuo Google Drive, che GhedoLab non possiede. Per eliminarli disinstalla l'app (o cancellali dalle Impostazioni) ed elimina la cartella "WorkTracker Backups" da Drive.</p>
+      <p><strong>Cosa viene cancellato:</strong> email, nome e cognome, stato della prova o dello sblocco e storico della licenza dal servizio licenze. <strong>Cosa no:</strong> i dati sul tuo telefono, nel tuo Google Drive e nel tuo calendario, che GhedoLab non possiede. Per eliminarli disinstalla l'app (o cancellali dalle Impostazioni), elimina la cartella "WorkTracker Backups" da Drive e disattiva il calendario del telefono scegliendo di togliere gli eventi.</p>
 
       <h2>8. Trasferimenti fuori dall'Unione Europea</h2>
-      <p>Il servizio licenze si trova nell'UE. Google (segnalazioni, backup su Drive) e Sentry sono aziende con sede negli Stati Uniti: i trasferimenti verso di loro avvengono in base al <em>EU-U.S. Data Privacy Framework</em> o alle clausole contrattuali standard della Commissione Europea.</p>
+      <p>Il servizio licenze e i server di invio di Resend si trovano nell'UE. Google (segnalazioni, backup su Drive, backup di Android, calendario Google se lo scegli), Sentry e Resend sono aziende con sede negli Stati Uniti: i trasferimenti verso di loro avvengono in base al <em>EU-U.S. Data Privacy Framework</em> o alle clausole contrattuali standard della Commissione Europea.</p>
 
       <h2>9. Nessuna pubblicità, nessuna vendita di dati</h2>
       <p>WorkTracker non contiene pubblicità né strumenti di tracciamento pubblicitario, e non vende né cede dati a terzi per scopi commerciali.</p>
@@ -140,6 +147,7 @@
       <h2 id="modifiche">13. Modifiche a questa informativa</h2>
       <p>La versione aggiornata è sempre a questo indirizzo e nell'app (Impostazioni → Informativa Privacy). Se una modifica cambia in modo importante i dati trattati, lo segnaleremo anche nell'app.</p>
       <ul>
+        <li><strong>12 ottobre 2026</strong> — aggiunti calendario del telefono, backup automatico di Android, commesse e clienti, banca ore, copia di sicurezza locale, blocco dell'app con impronta o PIN, permesso di posizione approssimativa; indicato Resend come servizio di invio dei codici di accesso.</li>
         <li><strong>7 ottobre 2026</strong> — nomi delle versioni aggiornati: WorkTracker Lite e WorkTracker (in lavorazione, con periodo di prova su richiesta).</li>
         <li><strong>6 ottobre 2026</strong> — aggiunti account WorkTracker con prova su richiesta, backup su Google Drive, zone di lavoro, timbratura NFC, mappe e stazioni OpenStreetMap, basi giuridiche, tempi di conservazione, trasferimenti extra-UE, nuovo contatto info@ghedolab.com.</li>
       </ul>
