@@ -50,6 +50,21 @@ proprie, andranno in `/elekit/` sul modello di `/worktracker/`.
 - Segnala a chi gestisce il progetto cosa va aggiornato in Play Console (Sicurezza dei
   dati, permessi): non lo puoi fare tu.
 
+## Sicurezza dei dati di Play Console
+
+- `play-console/worktracker-data-safety.csv` è il modulo "Sicurezza dei dati" di
+  WorkTracker nel formato di esportazione/importazione di Play Console (non pubblicato
+  sul sito: escluso in `_config.yml`).
+- Quando una modifica all'app cambia i dati raccolti (nuovo servizio, nuovo dato inviato
+  fuori dal telefono, nuova finalità), aggiorna questo file insieme all'informativa e
+  invialo a chi gestisce il progetto, che lo importa in Play Console.
+- Mantieni il formato identico all'esportazione: stesse righe e colonne, cambia solo la
+  colonna "Response value", fine riga CRLF, nessun a capo finale.
+- Regole usate: i fornitori di servizi (Sentry, servizio licenze, Google Apps Script,
+  Resend) non sono "condivisione"; i dati trattati solo sul telefono (posizione,
+  calendario) non si dichiarano; il backup su Google Drive si dichiara come raccolto e
+  facoltativo.
+
 ## Regole tecniche
 
 - HTML statico, nessun build. Percorsi **relativi** in tutte le pagine tranne `404.html`.

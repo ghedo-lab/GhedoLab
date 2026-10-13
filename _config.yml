@@ -1,3 +1,4 @@
 # GitHub Pages (Jekyll): file del repository da non pubblicare sul sito.
 exclude:
   - CLAUDE.md
+  - play-console/
