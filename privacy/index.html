@@ -94,9 +94,10 @@
       <div class="legal-note">Se alleghi uno screenshot a una segnalazione, controlla che non mostri dati che non vuoi condividere.</div>
 
       <h2>5. Posizione</h2>
-      <p>WorkTracker <strong>non traccia i tuoi spostamenti</strong> e non legge la posizione in background. La posizione serve solo in due casi:</p>
+      <p>WorkTracker <strong>non traccia i tuoi spostamenti</strong> e non salva uno storico delle posizioni. La posizione serve solo in tre casi:</p>
       <ul>
         <li><strong>Zone di lavoro (facoltative).</strong> Se le attivi, all'apertura dell'app il telefono legge una volta la posizione e la confronta con le zone che hai salvato, per proporti "Timbrare l'entrata?". Il confronto avviene sul telefono: la posizione non viene inviata a nessuno e non viene salvata in uno storico. La timbratura richiede sempre un tuo tocco.</li>
+        <li><strong>Timbratura automatica con le zone (facoltativa).</strong> Se la attivi e concedi la posizione «Consenti sempre», WorkTracker usa la posizione <strong>anche quando l'app è chiusa o non in uso</strong>, per timbrare da sola l'entrata quando entri in una tua zona di lavoro e l'uscita quando ne esci. Il controllo lo fanno Google Play Services sul telefono (geofence): l'app viene avvisata solo all'ingresso e all'uscita da una zona, non legge la posizione in continuo. La posizione non viene inviata a GhedoLab né salvata: restano solo le timbrature, che puoi annullare dalla notifica. Puoi spegnerla in ogni momento da Impostazioni → Zone di lavoro.</li>
         <li><strong>Ricerca del server aziendale (solo Android 12 e precedenti).</strong> Su queste versioni Android richiede il permesso di posizione per cercare dispositivi sulla rete Wi-Fi locale: WorkTracker lo usa solo per trovare il server della tua organizzazione. Da Android 13 si usa invece "Dispositivi nelle vicinanze", dichiarato come non usato per la posizione.</li>
       </ul>
       <p>Gli indirizzi delle trasferte li scegli tu, scrivendoli o toccando un punto sulla mappa.</p>
@@ -104,7 +105,7 @@
       <h3>Permessi del dispositivo</h3>
       <ul>
         <li><strong>Fotocamera e foto:</strong> scontrini, prenotazioni, immagine del profilo, screenshot facoltativi per le segnalazioni.</li>
-        <li><strong>Posizione (precisa o approssimativa, a tua scelta da Android 12):</strong> solo per i due casi descritti sopra.</li>
+        <li><strong>Posizione (precisa o approssimativa, a tua scelta da Android 12):</strong> solo per i tre casi descritti sopra; in background solo per la timbratura automatica, se la attivi.</li>
         <li><strong>Calendario:</strong> elencare i calendari del telefono e scrivere gli eventi di trasferte e assenze, solo se attivi la funzione. WorkTracker modifica solo gli eventi che ha creato e non legge i tuoi altri appuntamenti.</li>
         <li><strong>NFC:</strong> timbrare avvicinando il telefono a un tag NFC che hai configurato.</li>
         <li><strong>Rete locale e dispositivi nelle vicinanze:</strong> trovare il server della tua organizzazione.</li>
@@ -149,7 +150,7 @@
       <h2 id="modifiche">13. Modifiche a questa informativa</h2>
       <p>La versione aggiornata è sempre a questo indirizzo e nell'app (Impostazioni → Informativa Privacy). Se una modifica cambia in modo importante i dati trattati, lo segnaleremo anche nell'app.</p>
       <ul>
-        <li><strong>30 ottobre 2026</strong> — le segnalazioni passano dal servizio licenze prima di arrivare allo script Google, con avviso Telegram allo sviluppatore; aggiunti i limiti di richieste per indirizzo IP; il backup di Android esclude i dati di accesso all'account.</li>
+        <li><strong>30 ottobre 2026</strong> — aggiunta la timbratura automatica con le zone di lavoro, che usa la posizione anche ad app chiusa (facoltativa); le segnalazioni passano dal servizio licenze prima di arrivare allo script Google, con avviso Telegram allo sviluppatore; aggiunti i limiti di richieste per indirizzo IP; il backup di Android esclude i dati di accesso all'account.</li>
         <li><strong>12 ottobre 2026</strong> — aggiunti backup automatico in una cartella del telefono, calendario del telefono, backup automatico di Android, commesse e clienti, banca ore, copia di sicurezza locale, blocco dell'app con impronta o PIN, permesso di posizione approssimativa; indicato Resend come servizio di invio dei codici di accesso.</li>
         <li><strong>7 ottobre 2026</strong> — nomi delle versioni aggiornati: WorkTracker Lite e WorkTracker (in lavorazione, con periodo di prova su richiesta).</li>
         <li><strong>6 ottobre 2026</strong> — aggiunti account WorkTracker con prova su richiesta, backup su Google Drive, zone di lavoro, timbratura NFC, mappe e stazioni OpenStreetMap, basi giuridiche, tempi di conservazione, trasferimenti extra-UE, nuovo contatto info@ghedolab.com.</li>
