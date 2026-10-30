@@ -28,6 +28,21 @@ home di GhedoLab, le pagine dei prodotti, l'informativa privacy e i termini d'us
 Elekit per ora compare solo come scheda "In lavorazione" in home. Quando avrà pagine
 proprie, andranno in `/elekit/` sul modello di `/worktracker/`.
 
+## Logo GhedoLab (segnaposto)
+
+Il logo GhedoLab è in preparazione. In `assets/ghedolab/` ci sono segnaposto (riquadro
+tratteggiato) da sostituire **con lo stesso nome file**, senza toccare le pagine:
+
+| File | Dove compare | Formato |
+|---|---|---|
+| `logo.svg` | intestazione di home, Termini e 404; logo grande nella home; piè di pagina di tutte le pagine | SVG quadrato, leggibile in tema chiaro e scuro |
+| `favicon.svg` | icona della scheda di home, Termini e 404 | SVG quadrato |
+| `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | stesse pagine, browser senza SVG e iPhone | PNG 32, 192 e 180 px |
+
+Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'app in
+`assets/` (`favicon.svg`, `logo-mark.svg`, ...). Manca ancora un'immagine Open Graph
+(1200×630) per le anteprime dei link: da aggiungere quando il logo è pronto.
+
 ## Regole sui contenuti
 
 - Tutto in **italiano**, tono semplice e diretto.
