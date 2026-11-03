@@ -49,7 +49,7 @@
 
   <section style="padding-top:32px;">
     <div class="legal-prose">
-      <p class="legal-updated"><em>Ultimo aggiornamento: 30 ottobre 2026 · <a href="#modifiche">storico delle modifiche</a></em></p>
+      <p class="legal-updated"><em>Ultimo aggiornamento: 3 novembre 2026 · <a href="#modifiche">storico delle modifiche</a></em></p>
 
       <div class="legal-note"><strong>In breve.</strong> WorkTracker non ha pubblicità e non vende dati. Timbrature, ferie, trasferte, spese e foto degli scontrini restano sul tuo telefono: GhedoLab non li riceve e non può vederli. Lasciano il dispositivo solo pochi dati tecnici o di account, e sempre per un motivo preciso, elencato qui sotto.</div>
 
@@ -78,14 +78,14 @@
       <div class="table-scroll">
       <table>
         <tr><th>Servizio</th><th>Dati inviati</th><th>Quando</th><th>Perché e base giuridica</th></tr>
-        <tr><td>Account WorkTracker (servizio licenze di GhedoLab, ospitato da Fly.io a Francoforte, UE)</td><td>Email, nome e cognome se li inserisci, stato della prova o dello sblocco, identificativo anonimo generato dall'app</td><td>Quando accedi con l'email, quando richiedi la prova o lo sblocco, e con un controllo periodico (circa ogni 6 giorni) mentre le Trasferte sono attive</td><td>Gestire prova e sblocco delle Trasferte — contratto</td></tr>
+        <tr><td>Account WorkTracker (servizio licenze di GhedoLab, ospitato da Fly.io a Francoforte, UE)</td><td>Email, nome e cognome se li inserisci, stato della prova o dello sblocco, identificativo anonimo generato dall'app</td><td>Quando accedi con l'email, quando richiedi la prova o lo sblocco, all'apertura dell'app (al massimo ogni 2 minuti) e una volta al giorno in background, finché l'account è collegato all'app</td><td>Gestire prova e sblocco delle Trasferte — contratto</td></tr>
         <tr><td>Resend (invio email, server nell'UE in Irlanda)</td><td>Il tuo indirizzo email e il codice di accesso monouso</td><td>Quando chiedi il codice per accedere (valido 10 minuti)</td><td>Verificare che l'email sia tua — contratto</td></tr>
         <tr><td>Segnalazioni e richieste (servizio licenze di GhedoLab, poi Google Apps Script e Telegram)</td><td>Testo e categoria della richiesta, modello del telefono, versione di Android e dell'app, identificativo anonimo; per le richieste di sblocco anche la tua email; screenshot solo se scegli di allegarli. Il servizio licenze le inoltra a uno script Google che le registra in un foglio di GhedoLab; lo sviluppatore riceve su Telegram solo un avviso con la categoria e il numero della richiesta, senza testo né dati personali</td><td>Solo quando invii tu "Segnala un problema" o una richiesta di prova o sblocco</td><td>Assistenza e gestione delle richieste — contratto</td></tr>
-        <tr><td>Sentry (diagnostica errori)</td><td>Dati tecnici dell'errore (stack trace), modello del telefono, versione di Android e dell'app. Nessun nome, email o dato di lavoro</td><td>Automaticamente, quando l'app va in errore o si chiude inaspettatamente</td><td>Trovare e correggere i difetti — legittimo interesse</td></tr>
+        <tr><td>Sentry (diagnostica errori)</td><td>Dati tecnici dell'errore (stack trace), modello del telefono, versione di Android e dell'app; per circa un caso su dieci anche i tempi di caricamento delle schermate (prestazioni). Nessun nome, email o dato di lavoro</td><td>Automaticamente, quando l'app va in errore o si chiude inaspettatamente; le misure di prestazioni durante l'uso</td><td>Trovare e correggere i difetti — legittimo interesse</td></tr>
         <tr><td>Backup su Google Drive (facoltativo)</td><td>Copia dei dati dell'app, salvata nella cartella "WorkTracker Backups" del <strong>tuo</strong> Google Drive</td><td>Solo se colleghi il tuo account Google e attivi l'interruttore Drive in Gestione backup, o avvii un backup a mano</td><td>Permetterti di ripristinare i dati — contratto. GhedoLab non ha accesso ai tuoi backup; l'app può vedere solo i file che ha creato lei</td></tr>
         <tr><td>Calendario del telefono (facoltativo)</td><td>Trasferte (destinazione, itinerario, zona, commessa) e ferie, permessi e malattia (tipo, durata, nota) come eventi di calendario</td><td>Solo se lo attivi nelle Impostazioni; gli eventi vengono aggiornati quando l'app passa in background e circa ogni 6 ore</td><td>Vedere trasferte e assenze nel tuo calendario — contratto. Con il calendario locale "WorkTracker" gli eventi restano sul telefono; se scegli un calendario collegato a un account (ad esempio Google), Android li sincronizza con quell'account. GhedoLab non vi accede</td></tr>
         <tr><td>Backup del telefono di Android (Google)</td><td>I dati dell'app possono essere inclusi nel backup automatico del dispositivo, cifrato e salvato sul tuo account Google. Sono esclusi i dati di accesso all'account WorkTracker, che dopo un ripristino va ricollegato</td><td>Solo se sul telefono è attivo il backup di Google (Impostazioni di Android → Backup)</td><td>Ripristinare l'app su un nuovo telefono — funzione di Android gestita da Google; GhedoLab non vi accede</td></tr>
-        <tr><td>Photon (Komoot) — ricerca indirizzi</td><td>Il testo dell'indirizzo cercato, oppure le coordinate del punto che tocchi sulla mappa</td><td>Quando cerchi un indirizzo o scegli un punto sulla mappa</td><td>Trovare luoghi e indirizzi — contratto</td></tr>
+        <tr><td>Photon (Komoot) — ricerca indirizzi</td><td>Il testo dell'indirizzo cercato, oppure le coordinate del punto che tocchi sulla mappa o della tua posizione attuale (vedi sezione 5)</td><td>Quando cerchi un indirizzo, scegli un punto sulla mappa o apri la mappa senza un luogo già indicato</td><td>Trovare luoghi e indirizzi — contratto</td></tr>
         <tr><td>OpenStreetMap — mappe e stazioni (tile.openstreetmap.org, Overpass API)</td><td>Indirizzo IP e area della mappa visualizzata; coordinate di una destinazione per cercare la stazione ferroviaria più vicina</td><td>Quando apri una mappa o cerchi la stazione più vicina</td><td>Mostrare le mappe e i luoghi vicini — contratto</td></tr>
       </table>
       </div>
@@ -94,10 +94,11 @@
       <div class="legal-note">Se alleghi uno screenshot a una segnalazione, controlla che non mostri dati che non vuoi condividere.</div>
 
       <h2>5. Posizione</h2>
-      <p>WorkTracker <strong>non traccia i tuoi spostamenti</strong> e non salva uno storico delle posizioni. La posizione serve solo in tre casi:</p>
+      <p>WorkTracker <strong>non traccia i tuoi spostamenti</strong> e non salva uno storico delle posizioni. La posizione serve solo in quattro casi:</p>
       <ul>
         <li><strong>Zone di lavoro (facoltative).</strong> Se le attivi, all'apertura dell'app il telefono legge una volta la posizione e la confronta con le zone che hai salvato, per proporti "Timbrare l'entrata?". Il confronto avviene sul telefono: la posizione non viene inviata a nessuno e non viene salvata in uno storico. La timbratura richiede sempre un tuo tocco.</li>
         <li><strong>Timbratura automatica con le zone (facoltativa).</strong> Se la attivi e concedi la posizione «Consenti sempre», WorkTracker usa la posizione <strong>anche quando l'app è chiusa o non in uso</strong>, per timbrare da sola l'entrata quando entri in una tua zona di lavoro e l'uscita quando ne esci. Il controllo lo fanno Google Play Services sul telefono (geofence): l'app viene avvisata solo all'ingresso e all'uscita da una zona, non legge la posizione in continuo. La posizione non viene inviata a GhedoLab né salvata: restano solo le timbrature, che puoi annullare dalla notifica. Puoi spegnerla in ogni momento da Impostazioni → Zone di lavoro.</li>
+        <li><strong>Mappa per scegliere un luogo.</strong> Se apri la mappa senza un luogo già indicato (ad esempio per creare una zona di lavoro) e hai concesso la posizione, la mappa si centra dove ti trovi e l'app chiede a Photon l'indirizzo di quel punto. Le coordinate vanno solo a Photon; l'app le salva solo se confermi quel luogo.</li>
         <li><strong>Ricerca del server aziendale (solo Android 12 e precedenti).</strong> Su queste versioni Android richiede il permesso di posizione per cercare dispositivi sulla rete Wi-Fi locale: WorkTracker lo usa solo per trovare il server della tua organizzazione. Da Android 13 si usa invece "Dispositivi nelle vicinanze", dichiarato come non usato per la posizione.</li>
       </ul>
       <p>Gli indirizzi delle trasferte li scegli tu, scrivendoli o toccando un punto sulla mappa.</p>
@@ -105,7 +106,7 @@
       <h3>Permessi del dispositivo</h3>
       <ul>
         <li><strong>Fotocamera e foto:</strong> scontrini, prenotazioni, immagine del profilo, screenshot facoltativi per le segnalazioni.</li>
-        <li><strong>Posizione (precisa o approssimativa, a tua scelta da Android 12):</strong> solo per i tre casi descritti sopra; in background solo per la timbratura automatica, se la attivi.</li>
+        <li><strong>Posizione (precisa o approssimativa, a tua scelta da Android 12):</strong> solo per i quattro casi descritti sopra; in background solo per la timbratura automatica, se la attivi.</li>
         <li><strong>Calendario:</strong> elencare i calendari del telefono e scrivere gli eventi di trasferte e assenze, solo se attivi la funzione. WorkTracker modifica solo gli eventi che ha creato e non legge i tuoi altri appuntamenti.</li>
         <li><strong>NFC:</strong> timbrare avvicinando il telefono a un tag NFC che hai configurato.</li>
         <li><strong>Rete locale e dispositivi nelle vicinanze:</strong> trovare il server della tua organizzazione.</li>
@@ -150,6 +151,7 @@
       <h2 id="modifiche">13. Modifiche a questa informativa</h2>
       <p>La versione aggiornata è sempre a questo indirizzo e nell'app (Impostazioni → Informativa Privacy). Se una modifica cambia in modo importante i dati trattati, lo segnaleremo anche nell'app.</p>
       <ul>
+        <li><strong>3 novembre 2026</strong> — corretti i tempi del controllo dell'account WorkTracker; aggiunta la posizione attuale quando si apre la mappa senza un luogo; indicate le misure di prestazioni inviate a Sentry.</li>
         <li><strong>30 ottobre 2026</strong> — le segnalazioni passano dal servizio licenze prima di arrivare allo script Google, con avviso Telegram allo sviluppatore; aggiunti i limiti di richieste per indirizzo IP; il backup di Android esclude i dati di accesso all'account.</li>
         <li><strong>22 ottobre 2026</strong> — aggiunta la timbratura automatica con le zone di lavoro, che usa la posizione anche ad app chiusa (facoltativa).</li>
         <li><strong>12 ottobre 2026</strong> — aggiunti backup automatico in una cartella del telefono, calendario del telefono, backup automatico di Android, commesse e clienti, banca ore, copia di sicurezza locale, blocco dell'app con impronta o PIN, permesso di posizione approssimativa; indicato Resend come servizio di invio dei codici di accesso.</li>

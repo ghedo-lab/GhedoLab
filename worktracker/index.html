@@ -78,11 +78,11 @@
     <div class="clock-card">
       <div class="clock-face-row">
         <span class="clock-label">Oggi</span>
-        <span class="clock-status out" id="clockStatus">Fuori servizio</span>
+        <span class="clock-status out" id="clockStatus">Non in servizio</span>
       </div>
       <div class="clock-time" id="clockTime">00:00:00</div>
-      <div class="clock-since" id="clockSince">Non hai ancora timbrato l'ingresso</div>
-      <button class="clock-btn start" id="clockBtn">Timbra ingresso</button>
+      <div class="clock-since" id="clockSince">Non hai ancora timbrato l'entrata</div>
+      <button class="clock-btn start" id="clockBtn">Entrata</button>
       <div class="clock-hint">Prova: è lo stesso pulsante che trovi nell'app</div>
     </div>
   </section>
@@ -104,7 +104,7 @@
       <div class="tl-item">
         <div class="tl-time">08:42</div>
         <div class="tl-body">
-          <h3>Timbri l'ingresso</h3>
+          <h3>Timbri l'entrata</h3>
           <p>Un tocco, e l'orario è registrato. Se dimentichi di timbrare l'uscita, WorkTracker te lo ricorda invece di lasciare il conto sballato.</p>
         </div>
       </div>
@@ -195,16 +195,16 @@
       statusEl.textContent = 'In servizio';
       statusEl.className = 'clock-status in';
       sinceEl.textContent = 'In sede dalle ' + fmtClockStart(new Date());
-      btn.textContent = 'Timbra uscita';
+      btn.textContent = 'Uscita';
       btn.className = 'clock-btn stop';
       interval = setInterval(tick, 1000);
       tick();
     } else {
       clearInterval(interval);
-      statusEl.textContent = 'Fuori servizio';
+      statusEl.textContent = 'Non in servizio';
       statusEl.className = 'clock-status out';
       sinceEl.textContent = 'Turno registrato — ' + timerEl.textContent;
-      btn.textContent = 'Timbra ingresso';
+      btn.textContent = 'Entrata';
       btn.className = 'clock-btn start';
     }
   });
