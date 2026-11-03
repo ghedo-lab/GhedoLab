@@ -78,7 +78,11 @@ Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'
 - Regole usate: i fornitori di servizi (Sentry, servizio licenze, Google Apps Script,
   Resend) non sono "condivisione"; i dati trattati solo sul telefono (posizione,
   calendario) non si dichiarano; il backup su Google Drive si dichiara come raccolto e
-  facoltativo.
+  facoltativo; le ricerche di indirizzi (Photon e servizio di indirizzi di Android) sono
+  "Cronologia delle ricerche in-app"; OpenStreetMap (mappe e Overpass) riceve solo IP e
+  area, nessun tipo di dato in più.
+- Fonte del CSV dalla 1.0.15: `legal/worktracker-data-safety.csv` nel `main` di WorkTracker;
+  qui se ne tiene una copia identica byte per byte.
 
 ## Regole tecniche
 
