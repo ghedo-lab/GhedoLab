@@ -93,6 +93,11 @@ Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'
 
 ## Git
 
-- Lavora su un branch e unisci in `main` solo quando richiesto: GitHub Pages pubblica
-  da `main`.
-- Messaggi di commit in italiano, con prefisso "Sito:" o "Privacy:".
+- Lavora su un branch. **Al termine delle modifiche unisci nel `main`** (GitHub Pages
+  pubblica da `main`, quindi la modifica va online subito), poi **elimina gli altri branch
+  di lavoro di questo repository** (regola confermata da Nicholas il 3 novembre 2026).
+- Prima di eliminare, elenca i branch con `git branch -r --merged origin/main`: elimina
+  solo quelli già uniti. Un branch con commit non uniti non si elimina: segnalalo.
+- Mai force push su `main`: solo avanzamento diretto (fast-forward) o merge.
+- La regola vale solo per GhedoLab: mai toccare i branch di WorkTracker, Elekit o altre app.
+- Messaggi di commit in italiano, con prefisso "Sito:", "Privacy:" o "Repo:".
