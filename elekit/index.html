@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('wt-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elekit — Il manuale tascabile offline per tecnici elettrici</title>
+<meta name="description" content="Elekit è il manuale tascabile per elettricisti e manutentori: manuali PDF, calcoli elettrici, 41 guide rapide e le tue note, tutto offline sul telefono. In lavorazione: iscriviti alla lista d'attesa."><link rel="canonical" href="https://ghedolab.com/elekit/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhedoLab">
+<meta property="og:title" content="Elekit — Il manuale tascabile offline per tecnici elettrici">
+<meta property="og:description" content="Manuali PDF, calcoli elettrici, 41 guide rapide e le tue note, tutto offline sul telefono. In lavorazione: iscriviti alla lista d'attesa.">
+<meta property="og:url" content="https://ghedolab.com/elekit/">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" type="image/svg+xml" href="../assets/ghedolab/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/ghedolab/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/ghedolab/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/ghedolab/favicon-192.png">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .hero { padding-top: 56px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+  @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 40px; } }
+  .hero h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.08; margin: 0 0 20px; }
+  .hero p.lede { font-size: 18px; color: var(--text-muted); max-width: 46ch; margin: 0 0 32px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .calc-card {
+    background: var(--bg-contrast); color: var(--text-on-contrast);
+    border-radius: 18px; padding: 28px;
+    box-shadow: 0 20px 50px -20px rgba(12,24,48,0.5);
+  }
+  .calc-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; gap: 12px; }
+  .calc-title { font-weight: 600; font-size: 15px; }
+  .calc-badge { font-size: 12.5px; color: var(--green); font-weight: 600; white-space: nowrap; }
+  .calc-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .calc-fields label { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; color: var(--text-muted-on-contrast); }
+  .calc-fields input {
+    width: 100%; box-sizing: border-box; padding: 11px 12px; border-radius: 10px;
+    border: 1.5px solid var(--border-on-contrast); background: transparent; color: var(--text-on-contrast);
+    font-family: var(--serif-num); font-size: 18px; font-variant-numeric: tabular-nums;
+  }
+  .calc-fields input:focus { outline: none; border-color: var(--accent-bright); }
+  .calc-result { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--border-on-contrast); }
+  .calc-result .lbl { font-size: 12.5px; color: var(--text-muted-on-contrast); }
+  .calc-result .val { font-family: var(--serif-num); font-size: 40px; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 4px; }
+  .calc-hint { font-size: 12.5px; color: var(--text-muted-on-contrast); margin-top: 12px; }
+  .icon-wrap { width: 56px; height: 56px; border-radius: 14px; background: var(--bg-contrast); display: flex; align-items: center; justify-content: center; }
+  .icon-wrap svg { width: 28px; height: 28px; stroke: var(--accent-bright); }
+  .waitlist { text-align: center; max-width: 620px; margin: 0 auto; }
+  .waitlist h2 { margin: 0 0 14px; }
+  .waitlist p { margin: 0 0 26px; }
+  .waitlist .small { font-size: 13.5px; margin: 18px 0 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-row">
+    <a href="./" class="wordmark" aria-label="Elekit, home">
+      <img src="../assets/ghedolab/logo.svg" alt="" aria-hidden="true">
+      Elekit
+    </a>
+    <div class="header-right">
+      <nav>
+        <a href="#funzioni">Funzioni</a>
+        <a href="#lista-attesa">Lista d'attesa</a>
+        <a href="../">GhedoLab</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema chiaro/scuro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" id="top">
+    <div>
+      <h1>Il manuale che hai in tasca, anche senza campo.</h1>
+      <p class="lede">Elekit è pensato per elettricisti e manutentori: i tuoi manuali PDF, i calcoli di tutti i giorni, 41 guide rapide e le tue note di cantiere, sempre sul telefono e senza connessione. È in lavorazione: lascia la tua email e ti scriviamo quando esce.</p>
+      <div class="cta-row">
+        <a href="mailto:info@ghedolab.com?subject=Elekit%20-%20lista%20d%27attesa&amp;body=Ciao%2C%20avvisatemi%20quando%20Elekit%20esce%20su%20Google%20Play.%0A%0ALavoro%20come%3A%20" class="btn btn-primary">Avvisami all'uscita</a>
+        <a href="#funzioni" class="btn btn-ghost">Cosa fa</a>
+      </div>
+    </div>
+
+    <div class="calc-card" aria-label="Esempio di calcolo: legge di Ohm">
+      <div class="calc-head">
+        <span class="calc-title">Legge di Ohm</span>
+        <span class="calc-badge">Offline</span>
+      </div>
+      <div class="calc-fields">
+        <label>Tensione (V)<input id="ohmV" type="number" inputmode="decimal" value="230" min="0" step="any"></label>
+        <label>Resistenza (Ω)<input id="ohmR" type="number" inputmode="decimal" value="46" min="0" step="any"></label>
+      </div>
+      <div class="calc-result">
+        <div class="lbl">Corrente (I) · Potenza (P)</div>
+        <div class="val" id="ohmOut">5 A · 1150 W</div>
+      </div>
+      <div class="calc-hint">Prova: nell'app inserisci due valori qualsiasi e calcola il terzo</div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-item"><span class="mark">✓</span><span>Funziona senza connessione: i dati restano sul telefono</span></div>
+    <div class="trust-item"><span class="mark">✓</span><span>Nessuna pubblicità e nessun account</span></div>
+    <div class="trust-item"><span class="mark">✓</span><span>Fatto da un solo sviluppatore, senza fretta</span></div>
+  </div>
+</div>
+
+<section class="on-contrast">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Una giornata con Elekit</h2>
+      <p>Non un'enciclopedia da sfogliare: le risposte che servono davanti al quadro, in pochi secondi.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">07:50</div>
+        <div class="tl-body">
+          <h3>Apri il manuale dell'inverter</h3>
+          <p>Il PDF che hai importato è già sul telefono: lo trovi nell'indice alfabetico o tra i preferiti e lo ingrandisci fino a leggere la tabella dei parametri.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10:30</div>
+        <div class="tl-body">
+          <h3>Controlli la sezione del cavo</h3>
+          <p>Potenza, lunghezza, tensione e caduta ammessa: Elekit ti dà la sezione minima. Accanto, la guida rapida sulle portate per un controllo al volo.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">16:15</div>
+        <div class="tl-body">
+          <h3>Ti segni il trucco del giorno</h3>
+          <p>Quel codice errore risolto con un dip switch: lo salvi come trick, con la foto della scheda. La prossima volta lo ritrovi cercandolo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section id="funzioni">
+    <div class="section-head">
+      <h2>Cosa sa fare Elekit</h2>
+      <p>Cinque sezioni e una ricerca che le attraversa tutte.</p>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h5"/></svg></div>
+      <div>
+        <h3>Componenti e manuali PDF</h3>
+        <p>Importa manuali e schede tecniche: Elekit li copia nell'app, così restano leggibili anche se sposti o cancelli il file originale.</p>
+        <ul>
+          <li>Indice alfabetico, miniature e preferiti</li>
+          <li>Lettore PDF integrato con zoom fino a 5 volte</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></div>
+      <div>
+        <h3>Elettrotecnica e formule</h3>
+        <p>I calcoli che fai più spesso, con le spiegazioni sotto ogni risultato.</p>
+        <ul>
+          <li>Legge di Ohm: due valori a scelta, il terzo e la potenza li calcola l'app</li>
+          <li>Potenza del motore trifase, con cosφ, rendimento e fattore di contemporaneità</li>
+          <li>Protezione al primario dei trasformatori secondo la normativa scelta</li>
+          <li>Sezione minima del cavo dalla caduta di tensione ammessa</li>
+          <li>Conversione kW ↔ kVA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+      <div>
+        <h3>Bordo macchina e guida rapida</h3>
+        <p>41 schede di riferimento da campo, divise in cinque aree, più le tue note personali.</p>
+        <ul>
+          <li>Cavi, conduttori e identificazione: colori IEC, nomenclatura UL, marcature</li>
+          <li>Protezioni e manovra, motori e azionamenti</li>
+          <li>Sensori, segnali e comunicazione</li>
+          <li>Sicurezza, verifiche e norme</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
+      <div>
+        <h3>Tricks e troubleshooting</h3>
+        <p>Il tuo quaderno dei problemi risolti: note rapide, impostazioni dei dip switch, codici errore.</p>
+        <ul>
+          <li>Allegati PDF e foto per ogni trick</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div>
+        <h3>Design Specification</h3>
+        <p>La documentazione tecnica ordinata per cliente e per macchina, con cartelle e documenti.</p>
+        <ul>
+          <li>Cliente, macchina, cartelle e documenti, come nel tuo archivio</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-block">
+      <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></div>
+      <div>
+        <h3>Ricerca e backup</h3>
+        <p>Una sola casella per cercare in componenti, tricks, guide e documenti: le parole si trovano in qualsiasi ordine.</p>
+        <ul>
+          <li>Backup e ripristino in un file .zip che conservi dove vuoi</li>
+          <li>Tema chiaro e scuro, in italiano e in inglese</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="on-contrast" id="lista-attesa">
+  <div class="wrap">
+    <div class="waitlist">
+      <h2>Vuoi saperlo per primo?</h2>
+      <p>Elekit è in lavorazione. Scrivici e ti avvisiamo con una sola email quando arriva su Google Play. Se vuoi provarlo prima dell'uscita e dirci cosa migliorare, scrivilo nel messaggio.</p>
+      <a href="mailto:info@ghedolab.com?subject=Elekit%20-%20lista%20d%27attesa&amp;body=Ciao%2C%20avvisatemi%20quando%20Elekit%20esce%20su%20Google%20Play.%0A%0ALavoro%20come%3A%20%0AVorrei%20provarlo%20prima%20dell%27uscita%3A%20s%C3%AC%20%2F%20no" class="btn btn-primary">Iscrivimi alla lista d'attesa</a>
+      <p class="small muted">Usiamo il tuo indirizzo solo per questo avviso. Per toglierti dalla lista basta rispondere a info@ghedolab.com.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-brand"><img src="../assets/ghedolab/logo.svg" alt="" aria-hidden="true" width="20" height="20"> © 2026 GhedoLab</div>
+    <div class="footer-links">
+      <a href="../">GhedoLab</a>
+      <a href="../worktracker/">WorkTracker</a>
+      <a href="./">Elekit</a>
+      <a href="../termini/">Termini</a>
+      <a href="mailto:info@ghedolab.com">info@ghedolab.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+<script>
+(function () {
+  var v = document.getElementById('ohmV'), r = document.getElementById('ohmR'), out = document.getElementById('ohmOut');
+  function fmt(n) { return (Math.round(n * 100) / 100).toLocaleString('it-IT'); }
+  function calc() {
+    var V = parseFloat(v.value), R = parseFloat(r.value);
+    if (!(V > 0) || !(R > 0)) { out.textContent = '—'; return; }
+    var I = V / R;
+    out.textContent = fmt(I) + ' A · ' + fmt(V * I) + ' W';
+  }
+  v.addEventListener('input', calc); r.addEventListener('input', calc); calc();
+})();
+</script>
+</body>
+</html>
