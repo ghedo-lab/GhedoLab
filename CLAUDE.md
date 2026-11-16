@@ -86,6 +86,10 @@ Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'
 
 ## Regole tecniche
 
+- **Non rimuovere** il tag `<meta name="google-site-verification" ...>` nell'intestazione di
+  `index.html` e `worktracker/index.html`: verifica la proprietà di ghedolab.com su Google
+  Search Console (verifica del marchio OAuth per Google Drive). Se sparisce, Google revoca la verifica.
+
 - HTML statico, nessun build. Percorsi **relativi** in tutte le pagine tranne `404.html`.
 - Nessuna risorsa di terze parti: niente Google Fonts, CDN, analytics o cookie
   (l'informativa dichiara che il sito non li usa). I font sono in `assets/fonts/`.
