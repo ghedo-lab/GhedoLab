@@ -293,3 +293,11 @@ a.product-card:hover { border-color: var(--accent); }
 /* Da telefono stretto resta solo il logo anche nell'intestazione GhedoLab (la regola
    .wordmark-text più sopra ha la precedenza su quella a 420px vicino all'header). */
 @media (max-width: 420px) { .wordmark.wordmark-text { font-size: 0; } }
+
+/* ---------- Schermate dell'app (pagina WorkTracker) ---------- */
+.shot-row { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; -webkit-overflow-scrolling: touch; }
+.shot { flex: 0 0 220px; margin: 0; scroll-snap-align: start; }
+.shot img { width: 100%; height: auto; display: block; border-radius: 18px; border: 1px solid var(--border); background: var(--surface-card); }
+.shot figcaption { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.4; }
+@media (max-width: 640px) { .shot { flex-basis: 70%; } }
+.page-hero .lang-switch { margin: 0; font-size: 14px; }

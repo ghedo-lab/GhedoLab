@@ -20,28 +20,35 @@ home di GhedoLab, le pagine dei prodotti, l'informativa privacy e i termini d'us
 | `/` (`index.html`) | Home di GhedoLab: prodotti, chi siamo, contatti |
 | `/worktracker/` | Home, `funzionalita/` e `prezzi/` (titolo "Versioni") di WorkTracker |
 | `/privacy/` | Informativa privacy di WorkTracker. **Indirizzo fisso**: lo apre l'app |
+| `/en/privacy/` | Traduzione inglese dell'informativa |
+| `/elekit/` | Pagina di Elekit con lista d'attesa |
 | `/termini/` | Termini d'uso di WorkTracker |
 | `/funzionalita/`, `/prezzi/` | Solo rinvii ai nuovi indirizzi sotto `/worktracker/` |
 | `404.html` | Pagina di errore, unica con percorsi assoluti (`/assets/...`) |
 | `assets/` | `style.css` condiviso, `theme.js`, icone, font in `assets/fonts/` |
 
-Elekit per ora compare solo come scheda "In lavorazione" in home. Quando avrà pagine
-proprie, andranno in `/elekit/` sul modello di `/worktracker/`.
+Elekit è "in lavorazione": scheda in home e pagina `/elekit/`. La sua informativa
+(`/elekit/privacy/`) si pubblica solo dopo la rilettura di Nicholas.
 
-## Logo GhedoLab (segnaposto)
+## Logo e immagini
 
-Il logo GhedoLab è in preparazione. In `assets/ghedolab/` ci sono segnaposto (riquadro
-tratteggiato) da sostituire **con lo stesso nome file**, senza toccare le pagine:
+**Logo GhedoLab** (bozza del 20/11/2026, fonte `brand/ghedolab/` nel repository WorkTracker,
+con un LEGGIMI). Quando arriva il definitivo si sostituiscono i file con lo stesso nome.
+Regola di Nicholas: il logo con la scritta "GhedoLab" solo dove serve il nome (immagine
+Open Graph); altrove solo il simbolo.
 
-| File | Dove compare | Formato |
-|---|---|---|
-| `logo.svg` | intestazione di home, Termini e 404; logo grande nella home; piè di pagina di tutte le pagine | SVG quadrato, leggibile in tema chiaro e scuro |
-| `favicon.svg` | icona della scheda di home, Termini e 404 | SVG quadrato |
-| `favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png` | stesse pagine, browser senza SVG e iPhone | PNG 32, 192 e 180 px |
+| File in `assets/ghedolab/` | Dove compare |
+|---|---|
+| `logo.png` (simbolo, 256 px) | intestazione di home, Termini e 404; logo grande nella home; piè di pagina di tutte le pagine |
+| `favicon-32.png`, `favicon-48.png`, `favicon-192.png`, `apple-touch-icon.png`, `icon-512.png` | icone della scheda di home, Termini e 404 |
+| `og-image.png` (1200×630, con la scritta) | `og:image` di tutte le pagine |
 
-Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'app in
-`assets/` (`favicon.svg`, `logo-mark.svg`, ...). Manca ancora un'immagine Open Graph
-(1200×630) per le anteprime dei link: da aggiungere quando il logo è pronto.
+**Elekit**: `assets/elekit/` con logo e icone ricavati da `logo_elekit.png` del repository
+Elekit (pagina Elekit e scheda in home).
+
+**WorkTracker**: le pagine `/worktracker/` e `/privacy/` usano le icone dell'app in `assets/`
+(`favicon.svg`, `logo-mark.svg`, ...). Le schermate in `worktracker/screenshot/` (WebP 540 px)
+vengono da `screenshots/play-store/` del repository WorkTracker: aggiornarle quando cambiano.
 
 ## Regole sui contenuti
 
@@ -54,7 +61,8 @@ Le pagine WorkTracker (`/worktracker/`, `/privacy/`) usano invece le icone dell'
 
 ## Informativa privacy
 
-- La versione ufficiale è `privacy/index.html`. Nell'app ne esiste una copia offline
+- La versione ufficiale è `privacy/index.html`. La traduzione inglese è `en/privacy/index.html`,
+  copiata da `privacy_policy_en.html` dell'app (àncora `#account-deletion`): aggiornale insieme. Nell'app ne esiste una copia offline
   (`app/app/src/main/assets/privacy_policy.html` nel repository WorkTracker): ogni volta
   che cambi l'informativa, prepara anche il prompt per aggiornare quella copia.
 - A ogni modifica: aggiorna "Ultimo aggiornamento" e aggiungi una voce in
