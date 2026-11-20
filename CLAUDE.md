@@ -49,6 +49,13 @@ Elekit (pagina Elekit e scheda in home).
 **WorkTracker**: le pagine `/worktracker/` e `/privacy/` usano le icone dell'app in `assets/`
 (`favicon.svg`, `logo-mark.svg`, ...). Le schermate in `worktracker/screenshot/` (WebP 540 px)
 vengono da `screenshots/play-store/` del repository WorkTracker: aggiornarle quando cambiano.
+  Sei file, ognuno in due misure (`nome.webp` 540 px e `nome-grande.webp` 900 px per
+  l'ingrandimento): `home`, `timbrature`, `zone`, `trasferta`, `spese`, `report`. Schermate
+  sempre prese dall'inizio dello schermo; per cambiarle basta sostituire i file.
+
+**Badge Google Play**: `assets/google-play/badge-disponibile-su-google-play-it.svg`, ufficiale
+(fonte `brand/google-play/` di WorkTracker). Non modificarlo né ricolorarlo, lasciare spazio
+intorno, sempre collegato a https://play.google.com/store/apps/details?id=com.GhedoLab.WT.
 
 ## Regole sui contenuti
 

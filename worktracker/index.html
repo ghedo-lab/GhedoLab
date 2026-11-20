@@ -76,7 +76,7 @@
       <h1>Ogni ora di lavoro, al suo posto.</h1>
       <p class="lede">Timbra, gestisci ferie e permessi con WorkTracker Lite. Tutto resta sul tuo telefono, non su un server di qualcun altro. Le trasferte arrivano con WorkTracker: è ancora in lavorazione, ma puoi già richiederne un periodo di prova.</p>
       <div class="cta-row">
-        <a href="https://play.google.com/store/apps/details?id=com.GhedoLab.WT" class="btn btn-primary" rel="noopener">Scarica su Google Play</a>
+        <a href="https://play.google.com/store/apps/details?id=com.GhedoLab.WT" class="gp-badge" rel="noopener"><img src="../assets/google-play/badge-disponibile-su-google-play-it.svg" alt="Disponibile su Google Play" width="189" height="56"></a>
         <a href="./prezzi/" class="btn btn-ghost">Vedi le versioni</a>
         <a href="./funzionalita/" class="btn btn-ghost">Come funziona</a>
       </div>
@@ -133,21 +133,58 @@
   </div>
 </section>
 
-<section id="schermate">
+<section class="on-contrast gallery" id="schermate">
   <div class="wrap">
     <div class="section-head">
       <h2>L'app in breve</h2>
-      <p>Alcune schermate di WorkTracker. Trasferte e spese fanno parte di WorkTracker, in lavorazione.</p>
+      <p>Le schermate principali: timbrature, zone di lavoro, trasferte e spese. Trasferte e spese sono incluse in WorkTracker.</p>
     </div>
-    <div class="shot-row">
-      <figure class="shot"><img src="./screenshot/home.webp" alt="La Home con le ore di oggi e il pulsante Entrata" width="540" height="1080" loading="lazy"><figcaption>La Home con le ore di oggi e il pulsante Entrata</figcaption></figure>
-      <figure class="shot"><img src="./screenshot/calendario.webp" alt="Calendario del mese con lavoro, ferie e permessi" width="540" height="1080" loading="lazy"><figcaption>Calendario del mese con lavoro, ferie e permessi</figcaption></figure>
-      <figure class="shot"><img src="./screenshot/timbrature.webp" alt="Elenco delle timbrature del giorno" width="540" height="1080" loading="lazy"><figcaption>Elenco delle timbrature del giorno</figcaption></figure>
-      <figure class="shot"><img src="./screenshot/zone.webp" alt="Zone di lavoro per la timbratura con la posizione" width="540" height="1080" loading="lazy"><figcaption>Zone di lavoro per la timbratura con la posizione</figcaption></figure>
-      <figure class="shot"><img src="./screenshot/trasferta.webp" alt="Dettaglio di una trasferta con rimborso km e prenotazioni" width="540" height="1080" loading="lazy"><figcaption>Dettaglio di una trasferta con rimborso km e prenotazioni</figcaption></figure>
-      <figure class="shot"><img src="./screenshot/spese.webp" alt="Spese di trasferta con il totale della giornata" width="540" height="1080" loading="lazy"><figcaption>Spese di trasferta con il totale della giornata</figcaption></figure>
-    </div>
+    <ul class="phones" id="phones">
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/home-grande.webp" data-title="Home" aria-label="Ingrandisci: Home">
+          <img src="./screenshot/home.webp" alt="La Home di WorkTracker con le ore di oggi e il pulsante Entrata" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Home</strong>Ore di oggi, settimana e pulsante Entrata</p>
+      </li>
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/timbrature-grande.webp" data-title="Timbrature" aria-label="Ingrandisci: Timbrature">
+          <img src="./screenshot/timbrature.webp" alt="Elenco delle timbrature del giorno con entrate e uscite" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Timbrature</strong>Entrate e uscite del giorno, da correggere con un tocco</p>
+      </li>
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/zone-grande.webp" data-title="Zone di lavoro" aria-label="Ingrandisci: Zone di lavoro">
+          <img src="./screenshot/zone.webp" alt="Impostazioni delle zone di lavoro con la sede salvata" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Zone di lavoro</strong>Proposta o timbratura automatica quando arrivi</p>
+      </li>
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/trasferta-grande.webp" data-title="Nuova trasferta" aria-label="Ingrandisci: Nuova trasferta">
+          <img src="./screenshot/trasferta.webp" alt="Creazione di una trasferta con destinazione sulla mappa e tipo di spostamento" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Nuova trasferta</strong>Destinazione sulla mappa, zona e mezzo</p>
+      </li>
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/spese-grande.webp" data-title="Spese" aria-label="Ingrandisci: Spese">
+          <img src="./screenshot/spese.webp" alt="Spese di trasferta con il totale della giornata" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Spese</strong>Totale della giornata e scontrini per categoria</p>
+      </li>
+      <li class="phone-item">
+        <button class="phone" type="button" data-full="./screenshot/report-grande.webp" data-title="Report trasferta" aria-label="Ingrandisci: Report trasferta">
+          <img src="./screenshot/report.webp" alt="Schermata del report trasferta con i pulsanti PDF ed Excel" width="540" height="1080" loading="lazy" decoding="async">
+        </button>
+        <p class="phone-cap"><strong>Report trasferta</strong>PDF ed Excel pronti per il rimborso</p>
+      </li>
+    </ul>
+    <div class="phone-dots" id="phoneDots"></div>
   </div>
+  <dialog class="lightbox" id="lightbox" aria-label="Schermata ingrandita">
+    <button type="button" class="lb-close" data-lb="close" aria-label="Chiudi">✕</button>
+    <button type="button" class="lb-nav lb-prev" data-lb="prev" aria-label="Schermata precedente">‹</button>
+    <figure class="lb-figure"><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+    <button type="button" class="lb-nav lb-next" data-lb="next" aria-label="Schermata successiva">›</button>
+  </dialog>
 </section>
 
 <section>
@@ -174,7 +211,7 @@
       <strong>WorkTracker è in lavorazione.</strong> Trasferte e spese sono già utilizzabili ma stanno ancora evolvendo. Per ora si accede su richiesta: dall'app puoi chiedere un periodo di prova, legato alla tua email.
     </div>
     <div class="pricing-cta">
-      <a href="https://play.google.com/store/apps/details?id=com.GhedoLab.WT" class="btn btn-primary" rel="noopener">Scarica su Google Play</a>
+      <a href="https://play.google.com/store/apps/details?id=com.GhedoLab.WT" class="gp-badge" rel="noopener"><img src="../assets/google-play/badge-disponibile-su-google-play-it.svg" alt="Disponibile su Google Play" width="189" height="56"></a>
       <a href="./prezzi/" class="btn btn-ghost">Vedi tutti i dettagli</a>
       <span class="pricing-note">Per ora WorkTracker è disponibile su Google Play solo in Italia.</span>
     </div>
@@ -194,6 +231,56 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var list = document.getElementById('phones');
+  if (!list) return;
+  var phones = Array.prototype.slice.call(list.querySelectorAll('.phone'));
+  var items = list.querySelectorAll('.phone-item');
+  // Punti sotto la galleria (visibili solo da telefono, dove le schermate scorrono)
+  var dots = document.getElementById('phoneDots');
+  phones.forEach(function (_, n) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Vai alla schermata ' + (n + 1));
+    d.addEventListener('click', function () { items[n].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); });
+    dots.appendChild(d);
+  });
+  function markDot() {
+    var mid = list.scrollLeft + list.clientWidth / 2, best = 0, dist = Infinity;
+    items.forEach(function (it, n) {
+      var c = it.offsetLeft + it.offsetWidth / 2, dd = Math.abs(c - mid);
+      if (dd < dist) { dist = dd; best = n; }
+    });
+    Array.prototype.forEach.call(dots.children, function (d, n) { d.setAttribute('aria-current', n === best ? 'true' : 'false'); });
+  }
+  list.addEventListener('scroll', function () { window.requestAnimationFrame(markDot); }, { passive: true });
+  markDot();
+  // Ingrandimento: Esc chiude (dialog nativo), frecce per scorrere, clic fuori per chiudere
+  var box = document.getElementById('lightbox'), img = document.getElementById('lbImg'), cap = document.getElementById('lbCap');
+  if (!box || typeof box.showModal !== 'function') return;
+  var cur = 0;
+  function show(n) {
+    cur = (n + phones.length) % phones.length;
+    var b = phones[cur], small = b.querySelector('img');
+    img.src = b.getAttribute('data-full');
+    img.alt = small.alt;
+    cap.textContent = (cur + 1) + ' / ' + phones.length + ' · ' + b.getAttribute('data-title');
+  }
+  phones.forEach(function (b, n) { b.addEventListener('click', function () { show(n); box.showModal(); }); });
+  box.addEventListener('click', function (e) {
+    var a = e.target.getAttribute && e.target.getAttribute('data-lb');
+    if (a === 'close' || e.target === box) box.close();
+    else if (a === 'prev') show(cur - 1);
+    else if (a === 'next') show(cur + 1);
+  });
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); show(cur - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); show(cur + 1); }
+  });
+  box.addEventListener('close', function () { phones[cur].focus(); });
+})();
+</script>
 <script src="../assets/theme.js"></script>
 <script>
 (function () {
