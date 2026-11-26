@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <script>(function(){try{var t=localStorage.getItem('wt-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WorkTracker Enterprise — Anteprima</title>
+<title>WorkTracker Enterprise — Anteprima del pannello</title>
 <meta name="description" content="Anteprima di WorkTracker Enterprise, in lavorazione: l'app che i dipendenti usano già, con un pannello web per l'ufficio e il server installato in azienda.">
 <link rel="canonical" href="https://ghedolab.com/worktracker/enterprise/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GhedoLab">
-<meta property="og:title" content="WorkTracker Enterprise — Anteprima">
+<meta property="og:title" content="WorkTracker Enterprise — Anteprima del pannello">
 <meta property="og:description" content="Anteprima di WorkTracker Enterprise, in lavorazione: l'app che i dipendenti usano già, con un pannello web per l'ufficio e il server installato in azienda.">
 <meta property="og:url" content="https://ghedolab.com/worktracker/enterprise/">
 <meta property="og:locale" content="it_IT">
@@ -29,6 +29,8 @@
   .shots { display:grid; gap:56px; margin-top:8px; }
   .shot { display:grid; grid-template-columns: 1.4fr 1fr; gap:40px; align-items:center; }
   .shot:nth-child(even) .shot-img { order:2; }
+  .shot.wide { grid-template-columns: 1fr; gap:18px; }
+  .shot.wide .shot-img { order:0 !important; }
   @media (max-width: 860px) { .shot { grid-template-columns: 1fr; gap:18px; } .shot:nth-child(even) .shot-img { order:0; } }
   .shot-img { margin:0; border-radius:14px; overflow:hidden; border:1px solid var(--border); background:var(--bg-contrast); box-shadow:0 20px 50px -24px rgba(12,24,48,.45); }
   .shot-img img { display:block; width:100%; height:auto; cursor:zoom-in; }
@@ -82,27 +84,27 @@
     </div>
     <div class="shots">
       <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/01-dashboard.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+        <figure class="shot-img"><img src="img/01-dashboard.webp" data-full="img/01-dashboard-grande.webp" width="1200" height="643" loading="lazy" alt="Dashboard del pannello WorkTracker: le schede delle persone del team con lo stato di oggi, le ore del mese, una giornata da sistemare e due registrazioni da approvare."></figure>
         <div><div class="num">01</div><h3>Il team, oggi</h3><p>Chi è in servizio, chi è in trasferta, le ore e le anomalie del mese e le registrazioni da approvare, tutto in una pagina. Apri il pannello al mattino e sai già dove guardare.</p></div>
       </div>
       <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/02-timbrature.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+        <figure class="shot-img"><img src="img/02-timbrature.webp" data-full="img/02-timbrature-grande.webp" width="1200" height="972" loading="lazy" alt="Pagina Timbrature del pannello: il calendario di novembre di una persona, il grafico delle ore degli ultimi 14 giorni e l'elenco di entrate e uscite con i pulsanti per modificarle."></figure>
         <div><div class="num">02</div><h3>Un'uscita dimenticata? Si corregge in un attimo</h3><p>Le timbrature di ogni persona, giorno per giorno, con la correzione fatta dal pannello. Ogni modifica resta nel registro, così si sa sempre chi ha cambiato cosa.</p></div>
       </div>
       <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/03-gerarchia.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+        <figure class="shot-img"><img src="img/03-gerarchia.webp" data-full="img/03-gerarchia-grande.webp" width="1200" height="618" loading="lazy" alt="Organigramma dell'azienda nel pannello: dal direttore ai responsabili di reparto e agli operai, ognuno con posizione, reparto e mansione."></figure>
         <div><div class="num">03</div><h3>L'azienda com'è davvero</h3><p>L'organigramma con posizione, reparto e mansione di ognuno, aggiornato in tempo reale. Chi approva e chi vede i dati di chi si decide a parte, nelle autorizzazioni.</p></div>
       </div>
-      <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/04-trasferte-spese.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+      <div class="shot wide">
+        <figure class="shot-img"><img src="img/04-trasferte-spese.webp" data-full="img/04-trasferte-spese-grande.webp" width="1200" height="321" loading="lazy" alt="Una trasferta da Milano a Verona con l'hotel prenotato e, accanto, le spese della trasferta con importo, categoria e miniatura dello scontrino."></figure>
         <div><div class="num">04</div><h3>Trasferte e scontrini, senza carta</h3><p>Le trasferte del team con le prenotazioni di hotel e trasporti, e le spese con la foto dello scontrino. Niente buste di ricevute a fine mese.</p></div>
       </div>
-      <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/05-report.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+      <div class="shot wide">
+        <figure class="shot-img"><img src="img/05-report.webp" data-full="img/05-report-grande.webp" width="1200" height="537" loading="lazy" alt="Pagina Report del pannello: il pulsante per scaricare il CSV del mese del team, i totali dell'anno di una persona e, a destra, l'anteprima del report annuale in PDF."></figure>
         <div><div class="num">05</div><h3>Il mese, pronto per l'ufficio del personale</h3><p>Il riepilogo mensile del team in CSV, da aprire in Excel o caricare nel gestionale paghe, e il report annuale in PDF per ogni persona.</p></div>
       </div>
       <div class="shot">
-        <figure class="shot-img"><!-- SCHERMATA: img/06-impostazioni.webp --><div class="shot-ph">Schermata in arrivo</div></figure>
+        <figure class="shot-img"><img src="img/06-impostazioni.webp" data-full="img/06-impostazioni-grande.webp" width="1200" height="1293" loading="lazy" alt="Pagina Impostazioni del pannello: backup automatico ogni notte, avvisi via email, regole dell'archivio e versione minima dell'app sui telefoni."></figure>
         <div><div class="num">06</div><h3>Il server lo controlli tu</h3><p>Backup, avvisi via email, versione minima dell'app e le impostazioni dell'app decise dal pannello per ogni persona. I dati restano sul vostro server.</p></div>
       </div>
     </div>
@@ -125,7 +127,7 @@
     <div style="text-align:center;">
       <h2 style="margin:0 0 14px;">Ti interessa WorkTracker Enterprise?</h2>
       <p class="muted" style="margin:0 0 28px;">Scrivici: ti rispondiamo e ti avvisiamo quando sarà pronto.</p>
-      <a href="mailto:info@ghedolab.com?subject=WorkTracker%20Enterprise" class="btn btn-primary">Contattaci</a>
+      <a href="mailto:info@ghedolab.com?subject=WorkTracker%20Enterprise" class="btn btn-primary">Contattaci se sei interessato</a>
     </div>
   </section>
 </div>
@@ -152,7 +154,7 @@
 (function () {
   var lb = document.getElementById('lightbox'), big = lb.querySelector('img');
   document.querySelectorAll('.shot-img img').forEach(function (im) {
-    im.addEventListener('click', function () { big.src = im.src; big.alt = im.alt; lb.classList.add('open'); });
+    im.addEventListener('click', function () { big.src = im.dataset.full || im.src; big.alt = im.alt; lb.classList.add('open'); });
   });
   lb.addEventListener('click', function () { lb.classList.remove('open'); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
